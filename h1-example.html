@@ -10,6 +10,9 @@
       padding: 0;
       margin: 0;
     }
+    body {
+      background-color: thistle;
+    }
 
     #container {
       width: 100vw;
@@ -20,7 +23,7 @@
     }
 
     #container h1 {
-      transition: .8s;
+      transition: 1s;
     }
     
   </style>
@@ -36,17 +39,17 @@
     // 자바스크립트에서 초기설정(init)을 했다.
     
     h1.style.opacity = 0;
-    h1.style.fontSize = 10 +"px";
+    h1.style.fontSize = 16 +"px";
 
     // 알고리즘 구상
     // 1. opacity는 0에서부터 1까지의 값으로 투명도를 조정한다.
     // 2. 1초당 0.1씩 증가시키면 조금씩 나타나는 동작을 동적으로 만들 수 있다.
     // 3. 0인 어떤 값을 0.1 씩 더해지고, 1이 되면 멈춰지는 동작을 시도해 본다.
 
-    // 1. font size를 10px에서 시작해서 1초당 10씩 증가시켜보자
+    // 1. font size를 16px에서 시작해서 1초당 2씩 증가시켜보자
 
     let opacityValue = 0;
-    let fontsizeValue = 10;
+    let fontsizeValue = 16;
     
     //일정시간에 맞추어 동작하는 메서드(method)를 사용한다.
     let opacityTimer = setInterval(function() {
@@ -54,8 +57,8 @@
       opacityValue = opacityValue + 0.1;
       //opcityValue의 값은 0이고 0.1을 더한값을 다시 opacityValue값에 대입
 
-      fontsizeValue = fontsizeValue + 10
-      //fontsizeValue의 값은 10이고 10 더한값을 다시 fontsizeValue값에 대입
+      fontsizeValue = fontsizeValue + 2
+      //fontsizeValue의 값은 16이고 2 더한값을 다시 fontsizeValue값에 대입
       console.log(fontsizeValue);
       //1초마다 fontsizeValue 값이 증가하는 것을 확인
       console.log(opacityValue);
@@ -72,7 +75,7 @@
         clearInterval(opacityTimer);
         console.log('complete!');
       }
-    }, 1000);
+    }, 100);
 
   </script>
 </body>
